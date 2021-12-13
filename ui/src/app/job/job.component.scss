@@ -38,3 +38,7 @@ table {
     background-color: #ddd;
   }
 }
+
+option[default] {
+  display: none;
+}

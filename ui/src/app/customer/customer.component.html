@@ -2,7 +2,7 @@
 <form #customerForm="ngForm" (ngSubmit)="createCustomer(customerForm)">
   <label for="type">Type</label>
   <select name="type" required #type="ngModel" ngModel [(ngModel)]="newCustomer.type">
-    <option [ngValue]="undefined" selected disabled>Please Choose...</option>
+    <option [ngValue]="null" selected disabled>Please select</option>
     <option *ngFor="let type of types">{{type}}</option>
   </select>
   <small *ngIf="type.invalid">Please select customer type</small>
@@ -26,7 +26,7 @@
       <td>{{customer.name}}</td>
       <td>{{customer.type}}</td>
       <td>
-        <a [routerLink]="['/customer', customer.id]">Open</a>
+        <a [routerLink]="['/customers', customer.id]">Open</a>
       </td>
     </tr>
   </tbody>

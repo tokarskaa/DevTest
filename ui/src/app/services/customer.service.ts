@@ -13,4 +13,12 @@ export class CustomerService {
   public getCustomers(): Observable<CustomerModel[]> {
     return this.httpClient.get<CustomerModel[]>('http://localhost:63235/customers');
   }
+
+  public createCustomer(customer: CustomerModel): Promise<object> {
+    return this.httpClient.post('http://localhost:63235/customers', customer).toPromise();
+  }
+
+  public getCustomer(id: number): Observable<CustomerModel> {
+    return this.httpClient.get<CustomerModel>(`http://localhost:63235/customers/${id}`);
+  }
 }

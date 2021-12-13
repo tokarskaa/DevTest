@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CreateJobModel } from '../models/create-job.model';
 import { JobModel } from '../models/job.model';
 
 @Injectable({
@@ -18,7 +19,7 @@ export class JobService {
     return this.httpClient.get<JobModel>(`http://localhost:63235/job/${jobId}`);
   }
 
-  public CreateJob(job: JobModel): Promise<object> {
+  public CreateJob(job: CreateJobModel): Promise<object> {
     return this.httpClient.post('http://localhost:63235/job', job).toPromise();
   }
 }

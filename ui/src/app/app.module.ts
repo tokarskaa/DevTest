@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { CustomerNamePipe } from './job/customer-name.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     HomeComponent,
     JobDetailComponent,
     CustomerComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    CustomerNamePipe
   ],
   imports: [
     FormsModule,

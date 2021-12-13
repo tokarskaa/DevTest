@@ -30,6 +30,18 @@ export class CustomerComponent implements OnInit {
   }
 
   createCustomer(form: NgForm) {
+    if (form.invalid) {
+      alert('form is not valid');
+    } else {
+      this.customerService.createCustomer(this.newCustomer).then(() => {
+        this.customers$ = this.customerService.getCustomers();
+        this.newCustomer = {
+          id: null,
+          name: null,
+          type: null
+        };
+      });
+    }
   }
 
 }
