@@ -27,6 +27,12 @@ namespace DeveloperTest.Database
                 .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Job>()
+                .HasOne(x => x.Customer)
+                .WithMany()
+                .HasForeignKey(x => x.CustomerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Job>()
                 .HasData(new Job
                 {
                     JobId = 1,

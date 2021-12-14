@@ -10,5 +10,9 @@ namespace DeveloperTest.Business.Interfaces
     public interface ICustomerService
     {
         CustomerModel[] GetCustomers();
+
+        CustomerModel CreateCustomer(CreateCustomerModel customer);
+
+        CustomerModel GetCustomer(int id);
     }
 }
